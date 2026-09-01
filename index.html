@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Factory DMS - ระบบจัดการเอกสารโรงงาน</title>
+  <style>
+    * { box-sizing: border-box; }
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #0f172a; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <iframe id="dmsFrame" allow="camera; microphone; geolocation;" src=""></iframe>
+
+  <script>
+    // ใส่ URL Web App จาก Apps Script ของคุณที่นี่ (ลงท้ายด้วย /exec)
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbxfk1FDx43GNkdbOFF6YJFcbIfKPl0BdLbhhLnQrrPsHp54zbcMeqZyWcH5xmx5duqbmQ/exec";
+
+    const currentQuery = window.location.search;
+    document.getElementById("dmsFrame").src = GAS_URL + currentQuery;
+  </script>
+</body>
+</html>
